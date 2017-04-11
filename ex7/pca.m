@@ -1,0 +1,31 @@
+function [U, S] = pca(X)
+%PCA Run principal component analysis on the dataset X
+%   [U, S, X] = pca(X) computes eigenvectors of the covariance matrix of X
+%   Returns the eigenvectors U, the eigenvalues (on diagonal) in S
+%
+
+% Useful values
+[m, n] = size(X); #useful way to get row and column size at once!
+
+% You need to return the following variables correctly.
+U = zeros(n);
+S = zeros(n);
+
+% ====================== YOUR CODE HERE ======================
+% Instructions: You should first compute the covariance matrix. Then, you
+%               should use the "svd" function to compute the eigenvectors
+%               and eigenvalues of the covariance matrix. 
+%
+% Note: When computing the covariance matrix, remember to divide by m (the
+%       number of examples).
+%
+
+co_var = (X'*X)/m;
+[U, S, V] = svd(co_var);
+
+
+
+
+% =========================================================================
+
+end
